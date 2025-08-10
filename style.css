@@ -1,0 +1,491 @@
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    line-height: 1.6;
+    color: #e0e0e0;
+    background-color: #0a0a0a;
+    overflow-x: hidden;
+}
+
+/* Menu Lateral */
+#sidebar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 280px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0f0f0f 100%);
+    padding: 0;
+    z-index: 1000;
+    border-right: 1px solid #333;
+    transition: transform 0.3s ease;
+}
+
+.sidebar-header {
+    padding: 30px 20px;
+    text-align: center;
+    border-bottom: 1px solid #333;
+    background: #111;
+}
+
+.sidebar-header h3 {
+    color: #fff;
+    font-size: 24px;
+    font-weight: 300;
+    letter-spacing: 1px;
+}
+
+.sidebar-header h3 span {
+    color: #00d4aa;
+    font-weight: 600;
+}
+
+.list-unstyled {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+}
+
+.components {
+    padding: 20px 0;
+}
+
+.components li {
+    margin: 0;
+}
+
+.components li a {
+    display: flex;
+    align-items: center;
+    padding: 15px 25px;
+    color: #b0b0b0;
+    text-decoration: none;
+    font-size: 15px;
+    font-weight: 400;
+    transition: all 0.3s ease;
+    border-left: 3px solid transparent;
+}
+
+.components li a:hover {
+    background: rgba(0, 212, 170, 0.1);
+    color: #00d4aa;
+    border-left-color: #00d4aa;
+}
+
+.components li.active a {
+    background: rgba(0, 212, 170, 0.15);
+    color: #00d4aa;
+    border-left-color: #00d4aa;
+}
+
+/* Toggle do Menu Mobile */
+.sidebar-toggle {
+    position: fixed;
+    top: 20px;
+    left: 20px;
+    z-index: 1001;
+    background: #00d4aa;
+    color: #000;
+    border: none;
+    padding: 12px 15px;
+    border-radius: 8px;
+    font-size: 18px;
+    cursor: pointer;
+    display: none;
+    transition: all 0.3s ease;
+}
+
+.sidebar-toggle:hover {
+    background: #00b894;
+    transform: scale(1.05);
+}
+
+/* Conteúdo Principal */
+#content {
+    margin-left: 280px;
+    min-height: 100vh;
+    background: #0a0a0a;
+    transition: margin-left 0.3s ease;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 40px 30px;
+}
+
+/* Seções de Conteúdo */
+.content-section {
+    display: none;
+}
+
+.content-section.active {
+    display: block;
+}
+
+.content-section h1 {
+    font-size: 32px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 30px;
+    padding-bottom: 15px;
+    border-bottom: 2px solid #333;
+}
+
+/* Cards para outras seções */
+.placeholder-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 25px;
+    margin-top: 30px;
+}
+
+.card {
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border: 1px solid #333;
+    border-radius: 12px;
+    padding: 30px;
+    transition: all 0.3s ease;
+}
+
+.card:hover {
+    border-color: #00d4aa;
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.1);
+}
+
+.card h3 {
+    color: #00d4aa;
+    font-size: 20px;
+    font-weight: 500;
+    margin-bottom: 15px;
+}
+
+.card p {
+    color: #b0b0b0;
+    line-height: 1.6;
+}
+
+.balance {
+    font-size: 28px !important;
+    font-weight: 600 !important;
+    color: #00d4aa !important;
+}
+
+/* Estilos do PIX (mantendo os passos para pagar) */
+.payment-form {
+    text-align: center;
+    padding: 40px;
+    background: linear-gradient(145deg, #1a1a1a, #0f0f0f);
+    border-radius: 16px;
+    border: 1px solid #333;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.payment-form h1 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 30px;
+    border: none;
+    padding: 0;
+}
+
+.form-group {
+    margin-bottom: 25px;
+    text-align: left;
+}
+
+.form-group label {
+    display: block;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    font-size: 16px;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 15px 20px;
+    border: 2px solid #333;
+    border-radius: 10px;
+    font-size: 16px;
+    background: #1a1a1a;
+    color: #fff;
+    transition: all 0.3s ease;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #00d4aa;
+    background: #222;
+    box-shadow: 0 0 0 3px rgba(0, 212, 170, 0.1);
+}
+
+.generate-pix-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.generate-pix-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+}
+
+/* Tela de passos para pagar */
+.payment-steps {
+    padding: 20px 0;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.payment-steps h1 {
+    font-size: 28px;
+    font-weight: 300;
+    color: #fff;
+    margin-bottom: 30px;
+    text-align: center;
+    border: none;
+    padding: 0;
+}
+
+/* Passos */
+.step {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 25px;
+    padding: 0 10px;
+}
+
+.step-number {
+    width: 32px;
+    height: 32px;
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+    color: #000;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 16px;
+    margin-right: 15px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+
+.step-content {
+    flex: 1;
+}
+
+.step-content h3 {
+    font-size: 16px;
+    font-weight: 500;
+    color: #e0e0e0;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+
+/* Container do código PIX */
+.pix-code-container {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 10px;
+    padding: 15px;
+    margin: 15px 0;
+}
+
+.pix-code-container input {
+    width: 100%;
+    border: none;
+    background: transparent;
+    font-family: 'Courier New', monospace;
+    font-size: 14px;
+    color: #00d4aa;
+    text-align: center;
+    outline: none;
+    cursor: pointer;
+}
+
+/* Botão copiar código PIX */
+.copy-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #007bff, #0056b3);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 8px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 10px;
+}
+
+.copy-btn:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 6px 20px rgba(0, 123, 255, 0.3);
+}
+
+/* Seção do QR Code */
+.qr-code-section {
+    text-align: center;
+    margin: 30px 0;
+    padding: 20px;
+}
+
+.qr-code {
+    width: 280px;
+    height: 280px;
+    border: 2px solid #333;
+    border-radius: 12px;
+    background: white;
+    padding: 10px;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.3);
+}
+
+/* Botão "Já fiz o pagamento" */
+.payment-done-btn {
+    width: 100%;
+    background: linear-gradient(135deg, #00d4aa, #00b894);
+    color: #000;
+    border: none;
+    padding: 18px;
+    border-radius: 10px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 30px;
+}
+
+.payment-done-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 25px rgba(0, 212, 170, 0.3);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .sidebar-toggle {
+        display: block;
+    }
+    
+    #sidebar {
+        transform: translateX(-100%);
+    }
+    
+    #sidebar.active {
+        transform: translateX(0);
+    }
+    
+    #content {
+        margin-left: 0;
+    }
+    
+    .container {
+        padding: 20px 15px;
+        padding-top: 80px;
+    }
+    
+    .payment-form {
+        padding: 30px 20px;
+    }
+    
+    .payment-steps h1 {
+        font-size: 24px;
+    }
+    
+    .qr-code {
+        width: 250px;
+        height: 250px;
+    }
+    
+    .step {
+        padding: 0 5px;
+    }
+    
+    .step-content h3 {
+        font-size: 15px;
+    }
+    
+    .pix-code-container input {
+        font-size: 12px;
+    }
+    
+    .placeholder-content {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    
+    .card {
+        padding: 25px 20px;
+    }
+}
+
+/* Animações */
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.payment-steps {
+    animation: fadeIn 0.5s ease-out;
+}
+
+.step {
+    animation: fadeIn 0.6s ease-out;
+}
+
+.qr-code-section {
+    animation: fadeIn 0.7s ease-out;
+}
+
+.card {
+    animation: fadeIn 0.5s ease-out;
+}
+
+/* Estados de feedback */
+.copy-btn.copied {
+    background: linear-gradient(135deg, #00d4aa, #00b894) !important;
+    color: #000 !important;
+}
+
+/* Scrollbar personalizada */
+::-webkit-scrollbar {
+    width: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+    background: #333;
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #00d4aa;
+}
+
